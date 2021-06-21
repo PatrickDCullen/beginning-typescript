@@ -35,7 +35,8 @@ interface User {
 interface Book {
   id: string;
   name: string;
-  releaseDate: Date;
+  //   ? for optional property
+  releaseDate?: Date;
 }
 
 // with a function that returns an object, the return type is both the object as well as the properties and their types
@@ -62,4 +63,5 @@ const saveBook = (book: Book) => console.log("saving book", { book });
 saveUser(book);
 saveBook(book);
 saveUser(user);
+// Note that this one throws an error, but it is asymmetrical (saveUser(book) doesn't throw an error)
 saveBook(user);
